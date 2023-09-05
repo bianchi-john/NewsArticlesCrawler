@@ -14,7 +14,7 @@ def print_loading_bar(iteration, total, bar_length=50):
 # Nuovo dataframe
 newDf = pd.DataFrame()
 
-df = pd.read_csv('dataframeWithLinks_0.csv', encoding='utf8')
+df = pd.read_csv('dataframeWithLinksClean.csv', encoding='utf8')
 
 total_news = len(df['Url'])
 processed_news = 0

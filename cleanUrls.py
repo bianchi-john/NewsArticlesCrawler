@@ -18,7 +18,7 @@ df.drop(columns=["Extracted_Domain"], inplace=True)
 # Ora df contiene solo le righe con URL che fanno riferimento alla testata giornalistica corretta
 print(df)
 # Filtrare il dataframe per escludere le righe con "author" o "category" nella colonna "Url"
-df = df[~df["Url"].str.contains("author|category|@|.jpg|.png|.jpeg|.pdf|.zip|.gif|.mp4")]
+df = df[~df["Url"].str.contains("author|category|@|.jpg|.png|.jpeg|.pdf|.zip|.gif|.mp4|/tag/")]
 
 
 df.to_csv('dataframeWithLinksClean.csv', index=False)

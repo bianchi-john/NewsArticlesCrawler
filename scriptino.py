@@ -1,5 +1,5 @@
 import pandas as pd
-df = pd.read_csv('dataframeWithLinksClean.csv', encoding='utf8')
+df = pd.read_csv('dataframeWithLinksAndText.csv', encoding='utf8')
 
 # Ottenere i valori distinti dalla colonna "Domain" e il loro "Topics" associato
 distinct_domains = df['Domain'].unique()

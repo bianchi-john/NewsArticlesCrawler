@@ -1,7 +1,7 @@
 import pandas as pd
 import tldextract
 
-df = pd.read_csv('dataframeWithLinksClean.csv', encoding='utf8')
+df = pd.read_csv('dataframeWithLinks.csv', encoding='utf8')
 
 # Funzione per estrarre il dominio da un URL
 def extract_domain(url):

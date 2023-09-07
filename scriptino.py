@@ -1,5 +1,5 @@
 import pandas as pd
-df = pd.read_csv('dataframeWithLinksAndText.csv', encoding='utf8')
+df = pd.read_csv('dataframeWithLinksAndTextClean.csv', encoding='utf8')
 
 # Ottenere i valori distinti dalla colonna "Domain" e il loro "Topics" associato
 distinct_domains = df['Domain'].unique()
@@ -21,7 +21,7 @@ for domain in distinct_domains:
     if (topics_for_domain == "Health or medical information"):
         Health = Health + 1
 
-print ("Political" + str(Political))
-print ("Conspiracy" + str(Conspiracy))
-print ("Healt" + str(Health))
-print ("Sport" + str(Sports))
+print ("Political " + str(Political))
+print ("Conspiracy " + str(Conspiracy))
+print ("Healt " + str(Health))
+print ("Sport " + str(Sports))

@@ -33,25 +33,25 @@ for idx, news in enumerate(df['Url']):
             continue
         
         # Controllo sulla lunghezza del testo
-        if len(article.text.split()) < 200:
+        if len(article.text.split()) < 100:
             continue
-
         data = {
-            'Domain': parentDomain if parentDomain else None,
-            'Url': news if news else None,
-            'Score': score if score else None,
-            'Topics': topic if topic else None,
-            'Title': article.title if article and article.title else None,
-            'Authors': article.authors if article and article.authors else None,
-            'Publish date': article.publish_date if article and article.publish_date else None,
-            'Text': article.text if article and article.text else None,
+            'Domain': [parentDomain] if parentDomain else [None],
+            'Url': [news] if news else [None],
+            'Score': [score] if score else [None],
+            'Topics': [topic] if topic else [None],
+            'Title': [article.title] if article and article.title else [None],
+            'Authors': [article.authors] if article and article.authors else [None],
+            'Publish date': [article.publish_date] if article and article.publish_date else [None],
+            'Text': [article.text] if article and article.text else [None],
         }
-        
-        print(data)
+
+
         new_data_df = pd.DataFrame(data)
+        print(data)
         # Concatena il dataframe esistente con il nuovo dataframe
         newDf = pd.concat([newDf, new_data_df], ignore_index=True)
-        newDf.to_csv('dataframeWithLinksAndText.csv', index=False)
+        newDf.to_csv('nuoviArticoli.csv', index=False)
         
         processed_news += 1
         print_loading_bar(processed_news, total_news)
